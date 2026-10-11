@@ -125,7 +125,7 @@
 
   /* VIDEO */
   #video{background:var(--navy2);border-top:1px solid rgba(196,154,46,.15);}
-  .video-card{display:block;max-width:720px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;position:relative;background:#000 url('https://img.youtube.com/vi/hVFLJjfg_ls/maxresdefault.jpg') center/cover no-repeat;border:1px solid rgba(196,154,46,.2);text-decoration:none;}
+  .video-card{display:block;max-width:720px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;position:relative;background:#000;border:1px solid rgba(196,154,46,.2);text-decoration:none;}
   .video-card .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,27,42,.35);transition:background .2s;}
   .video-card .play{width:72px;height:72px;border-radius:50%;background:rgba(196,154,46,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:transform .2s;}
   .video-card .play::after{content:'';width:0;height:0;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #0d1b2a;margin-left:4px;}
@@ -258,13 +258,11 @@
 </section>
 
 <!-- VIDEO -->
-<section id="video">
+<section id="video" hidden>
   <div class="si">
     <div class="sl">Watch</div>
     <h2 class="lt">My Story</h2>
-    <a href="https://youtu.be/hVFLJjfg_ls" target="_blank" rel="noopener" class="video-card" aria-label="Watch Kevin Murdock's story on YouTube">
-      <span class="ov"><span class="play"></span></span>
-    </a>
+    <!-- dead YouTube link hVFLJjfg_ls removed 2026-10-11; held for Kevin -->
   </div>
 </section>
 
@@ -487,7 +485,6 @@
         <div class="clinks">
           <a href="https://www.linkedin.com/in/kevin-murdock-7a64a229/" target="_blank" rel="noopener" class="clink">LinkedIn</a>
           <a href="https://www.crunchbase.com/person/kevin-murdock-aa5f" target="_blank" rel="noopener" class="clink">Crunchbase</a>
-          <a href="https://youtu.be/hVFLJjfg_ls" target="_blank" rel="noopener" class="clink">YouTube</a>
         </div>
       </div>
       <div>
