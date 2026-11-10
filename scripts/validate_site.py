@@ -32,36 +32,36 @@ ATTORNEY = (
 REQUIRED_SNIPPETS = [
     ATTORNEY,
     "Attorney Statement",
-    "For over 25 years, Kevin S. Murdock has been building healthcare companies",
-    "Praised by US Senator Lindsey Graham as running one of the largest COVID variant labs in America.",
-    "Shannon Forest Christian School",
-    "Gold Star recipient, walk-on soccer player, and early graduate",
-    "World Bank forestry project in Tunisia",
-    "AstraZeneca",
-    "Nexium and Crestor",
+    "The Citadel Class of 1992",
     "Premier Medical Laboratory Services",
-    "the first private laboratory in South Carolina to receive FDA validation",
-    "up to 300,000 tests per day with pooling",
-    "Yale SalivaDirect",
-    "employed 450 people",
-    "As far as COVID goes, we are heavily invested in the variant testing",
+    "first private commercial testing facility in South Carolina",
+    "The Citadel Today",
+    "WIS-TV",
+    "Diversified Medical Healthcare",
+    "founded in 2011",
+    "$51 million",
+    "185 new jobs",
+    "315 Tanner Price Way",
+    "6000 Pelham Road",
+    "expected to be completed by 2025",
+    "toured Premier Medical Laboratories",
+    "senior staff of Sen. Tim Scott",
     "From leading research and innovation to generously donating PPE",
     "Our mission is to positively impact patient lives",
+    "100,000 tests per day",
+    "98% of results",
+    "Vessel Medical announced donations of N95 masks",
+    "CPT Medical, Vessel Medical, and OnGen",
+    "The Post and Courier",
+    "SCBIO Foundation",
     "There has been media coverage about legal matters.",
     "https://formspree.io/f/xgorwrnb",
     "G-H3GVQ6M8LM",
     "AW-18090292877",
     "https://www.linkedin.com/in/kevin-murdock-7a64a229/",
     "https://www.crunchbase.com/person/kevin-murdock-aa5f",
-    "https://bibleai.ai",
     "https://firstinandpunished.com",
     "https://firstinbook.com",
-    "Blue Cross Blue Shield preferred COVID lab",
-    "6M test kits manufactured",
-    "Garlington North",
-    "Meta Lab DX",
-    "Free COVID-19 Tests for All SC First Responders",
-    "Thousands of N95 Masks Donated",
     "id=\"video\"",
 ]
 
@@ -81,8 +81,8 @@ FORBIDDEN = [
 ROBOTS_EXPECTED = "User-agent: *\nAllow: /\n\nSitemap: https://kevinsmurdock.com/sitemap.xml\n"
 
 DESCRIPTION = (
-    "Kevin S. Murdock, Greenville SC healthcare entrepreneur and Citadel Class "
-    "of 1992 graduate, founded the state's first FDA-validated COVID testing lab."
+    "Kevin S. Murdock, Citadel Class of 1992, founded Premier Medical "
+    "Laboratory Services, SC's first private commercial COVID-19 testing lab."
 )
 
 
@@ -288,7 +288,7 @@ def main() -> int:
         check("https://kevinsmurdock.com" not in same and "https://kevinsmurdock.com/" not in same, "canonical URL should not also be sameAs")
         check(all(not str(url).lower().endswith("rep-os.ai") for url in same), "RepOS URL in sameAs")
     if page:
-        check(page.get("dateModified") == "2026-11-08", "schema dateModified is not the real edit date")
+        check(page.get("dateModified") == "2026-11-09", "schema dateModified is not the real edit date")
         check(page.get("description") == DESCRIPTION, "ProfilePage description mismatch")
 
     css_vars = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", html))
@@ -317,7 +317,7 @@ def main() -> int:
     check(ROBOTS.read_text(encoding="utf-8") == ROBOTS_EXPECTED, "robots.txt changed")
     sitemap = SITEMAP.read_text(encoding="utf-8")
     check("<loc>https://kevinsmurdock.com/</loc>" in sitemap, "sitemap loc missing")
-    check("<lastmod>2026-11-08</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
+    check("<lastmod>2026-11-09</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
     check("<changefreq>weekly</changefreq>" in sitemap, "sitemap changefreq changed")
     check("<priority>1.0</priority>" in sitemap, "sitemap priority changed")
     check(sitemap.count("<loc>") == 1, "sitemap should still list only the homepage")
