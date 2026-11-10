@@ -77,6 +77,13 @@ REQUIRED_SNIPPETS = [
     "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
     "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
     "PRNewswire (company press release)",
+    "https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us",
+    "exclusive U.S. provider of the PATIA DiabetesPredict test",
+    "The company reported more than",
+    "https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html",
+    "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
+    "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
+    "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
 ]
 
 FORBIDDEN = [
@@ -113,6 +120,11 @@ SOURCE_URLS = [
     "https://scbiz.com/coping-with-covid-cpt-medical/",
     "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
     "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
+    "https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us",
+    "https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html",
+    "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
+    "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
+    "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
 ]
 
 FAQ_REQUIRED = [
@@ -343,7 +355,7 @@ def main() -> int:
         for url in SOURCE_URLS:
             check(url in article_urls, f"NewsArticle missing for {url}")
         check(article_ids <= subject_ids, "Person subjectOf does not reference every NewsArticle")
-        check(len(articles) >= 11, "expected at least eleven NewsArticle nodes")
+        check(len(articles) >= 16, "expected at least sixteen NewsArticle nodes")
     if faq_page:
         faq_section = re.search(r'<section id="faq".*?</section>', html, flags=re.S)
         check(faq_section is not None, "visible FAQ section missing")

@@ -54,8 +54,29 @@ This file summarizes https://kevinsmurdock.com/ for language models and answer e
   https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/
   Greenville companies CPT Medical and Hoowaki had begun working together on COVID-19 test kits. The article said CPT Medical had brought on 25 additional workers and aimed to produce about 200,000 test kits weekly once the operation was automated.
 
+
+- GenomeWeb, June 13, 2019
+  https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us
+  GenomeWeb reported that Patia had signed an exclusive deal with Premier Medical Laboratory Services to offer a type 2 diabetes risk assay in the United States, announcing Premier as the exclusive U.S. provider of the PATIA DiabetesPredict test at that time.
+
+- SCBiz, April 9, 2021
+  https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/
+  SCBiz reported that Sen. Tim Scott's senior staff visited the 40,000-square-foot Greenville facility that houses Premier Medical Laboratory Services, CPT Medical, OnGen, and Vessel Medical. The article quoted Senator Scott, from a news release, saying the companies had been a valuable partner for South Carolina.
+
 ## Company press releases
 
 - PR Newswire, March 24, 2020 (company press release)
   https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html
   Premier Medical Laboratory Services, headquartered in Greenville, announced it was validated for COVID-19 testing. The release described a then-current testing capacity of 1,000 tests per day, with plans to reach 28,000 per week, and quoted founder Kevin Murdock.
+
+- PR Newswire, March 23, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html
+  The company reported more than one million COVID-19 tests processed, a laboratory staff of more than 360 employees, and that CPT Medical was capable of manufacturing 60,000 test kits per day.
+
+- PR Newswire, April 8, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html
+  Diversified Medical Healthcare announced that Sen. Tim Scott's senior staff visited the company's Greenville headquarters, which houses Premier Medical Laboratory Services, CPT Medical, OnGen, and Vessel Medical. The release also states that the visit came just two weeks after SC State Representatives Bobby Cox and Bruce Bannister visited the facility.
+
+- PR Newswire, June 17, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html
+  The company said U.S. Sen. Lindsey Graham toured Premier Medical Laboratory Services in Greenville. The release states that Senator Graham spoke alongside Kevin Murdock, CEO of Premier Medical Laboratory Services, and includes a photograph of Murdock showing Graham around the laboratory.
