@@ -84,6 +84,12 @@ REQUIRED_SNIPPETS = [
     "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
     "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
     "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
+    "https://www.postandcourier.com/greenville/politics/graham-calls-for-hearings-on-covid-questions-surrounding-wuhan-lab-during-greenville-visit/article_6a07b858-c7be-11eb-88dc-b74da1ccd884.html",
+    "held a press availability there",
+    "Kevin Murdock, CEO, appeared with him",
+    "https://greenvillejournal.com/branded-content/sen-tim-scotts-staff-visits-greenville-sc-medical-lab/",
+    "sponsored/branded content",
+    "introduced them to the company",
 ]
 
 FORBIDDEN = [
@@ -125,6 +131,8 @@ SOURCE_URLS = [
     "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
     "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
     "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
+    "https://www.postandcourier.com/greenville/politics/graham-calls-for-hearings-on-covid-questions-surrounding-wuhan-lab-during-greenville-visit/article_6a07b858-c7be-11eb-88dc-b74da1ccd884.html",
+    "https://greenvillejournal.com/branded-content/sen-tim-scotts-staff-visits-greenville-sc-medical-lab/",
 ]
 
 FAQ_REQUIRED = [
@@ -355,7 +363,7 @@ def main() -> int:
         for url in SOURCE_URLS:
             check(url in article_urls, f"NewsArticle missing for {url}")
         check(article_ids <= subject_ids, "Person subjectOf does not reference every NewsArticle")
-        check(len(articles) >= 16, "expected at least sixteen NewsArticle nodes")
+        check(len(articles) >= 18, "expected at least eighteen NewsArticle nodes")
     if faq_page:
         faq_section = re.search(r'<section id="faq".*?</section>', html, flags=re.S)
         check(faq_section is not None, "visible FAQ section missing")
