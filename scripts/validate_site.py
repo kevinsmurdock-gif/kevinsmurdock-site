@@ -522,18 +522,18 @@ def main() -> int:
     check(CSS.exists(), "css/site.css missing")
     css_vars = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", contrast_source))
     pairs = [
-        ("--text-on-navy", "--navy", 4.5),
-        ("--muted-on-navy", "--navy", 4.5),
-        ("--muted-on-navy", "--navy-2", 4.5),
-        ("--text-on-navy", "--navy-2", 4.5),
-        ("--gold-on-navy", "--navy", 4.5),
-        ("--gold-on-navy", "--navy-2", 4.5),
-        ("--ink", "--cream", 4.5),
+        ("--blue", "--cream", 4.5),
+        ("--blue", "--paper", 4.5),
+        ("--blue", "--band", 4.5),
         ("--muted", "--cream", 4.5),
         ("--muted", "--paper", 4.5),
-        ("--gold-text", "--cream", 4.5),
-        ("--gold-text", "--paper", 4.5),
-        ("--navy", "--gold-on-navy", 4.5),
+        ("--muted", "--band", 4.5),
+        ("--ink", "--cream", 4.5),
+        ("--ink", "--paper", 4.5),
+        ("--ink", "--band", 4.5),
+        ("--text-on-accent", "--accent", 4.5),
+        ("--blue-2", "--cream", 4.5),
+        ("--blue-2", "--paper", 4.5),
     ]
     for fg, bg, minimum in pairs:
         check(fg in css_vars and bg in css_vars, f"missing color variable {fg} or {bg}")
