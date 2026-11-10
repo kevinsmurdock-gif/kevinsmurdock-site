@@ -33,23 +33,32 @@
       "name": "Kevin S. Murdock | Healthcare Entrepreneur | Greenville, SC",
       "description": "Kevin S. Murdock, Citadel Class of 1992, founded Premier Medical Laboratory Services, SC's first private commercial COVID-19 testing lab.",
       "inLanguage": "en",
-      "dateModified": "2026-11-09",
-      "isPartOf": { "@id": "https://kevinsmurdock.com/#website" },
-      "mainEntity": { "@id": "https://kevinsmurdock.com/#person" }
+      "dateModified": "2026-11-10",
+      "isPartOf": {
+        "@id": "https://kevinsmurdock.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://kevinsmurdock.com/#person"
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://kevinsmurdock.com/#website",
       "url": "https://kevinsmurdock.com/",
       "name": "Kevin S. Murdock",
-      "publisher": { "@id": "https://kevinsmurdock.com/#person" },
+      "publisher": {
+        "@id": "https://kevinsmurdock.com/#person"
+      },
       "inLanguage": "en"
     },
     {
       "@type": "Person",
       "@id": "https://kevinsmurdock.com/#person",
       "name": "Kevin S. Murdock",
-      "alternateName": ["Kevin Murdock", "Kevin Scott Murdock"],
+      "alternateName": [
+        "Kevin Murdock",
+        "Kevin Scott Murdock"
+      ],
       "url": "https://kevinsmurdock.com/",
       "description": "Kevin S. Murdock, Citadel Class of 1992, founded Premier Medical Laboratory Services, SC's first private commercial COVID-19 testing lab.",
       "jobTitle": "Healthcare Entrepreneur",
@@ -62,8 +71,14 @@
         "name": "The Citadel",
         "url": "https://www.citadel.edu/"
       },
-      "knowsAbout": ["Healthcare", "Clinical laboratories", "COVID-19 testing"],
-      "mainEntityOfPage": { "@id": "https://kevinsmurdock.com/#page" },
+      "knowsAbout": [
+        "Healthcare",
+        "Clinical laboratories",
+        "COVID-19 testing"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://kevinsmurdock.com/#page"
+      },
       "sameAs": [
         "https://www.linkedin.com/in/kevin-murdock-7a64a229/",
         "https://www.crunchbase.com/person/kevin-murdock-aa5f",
@@ -90,13 +105,32 @@
         "https://kevinmurdockpremiermedical.com",
         "https://firstinandpunished.com",
         "https://firstinbook.com"
+      ],
+      "subjectOf": [
+        {
+          "@id": "https://kevinsmurdock.com/#news-scbiz-2020-03-24"
+        },
+        {
+          "@id": "https://kevinsmurdock.com/#news-wyff-2020-03-25"
+        },
+        {
+          "@id": "https://kevinsmurdock.com/#news-wistv-2020-04-16"
+        },
+        {
+          "@id": "https://kevinsmurdock.com/#news-citadel-2020-04-24"
+        },
+        {
+          "@id": "https://kevinsmurdock.com/#news-governor-2022-02-23"
+        }
       ]
     },
     {
       "@type": "Organization",
       "@id": "https://kevinsmurdock.com/#org-pmls",
       "name": "Premier Medical Laboratory Services",
-      "founder": { "@id": "https://kevinsmurdock.com/#person" },
+      "founder": {
+        "@id": "https://kevinsmurdock.com/#person"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Greenville",
@@ -109,13 +143,85 @@
       "@id": "https://kevinsmurdock.com/#org-dmh",
       "name": "Diversified Medical Healthcare",
       "foundingDate": "2011",
-      "founder": { "@id": "https://kevinsmurdock.com/#person" },
+      "founder": {
+        "@id": "https://kevinsmurdock.com/#person"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "6000 Pelham Road",
         "addressLocality": "Greenville",
         "addressRegion": "SC",
         "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://kevinsmurdock.com/#news-scbiz-2020-03-24",
+      "url": "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+      "headline": "Greenville lab validated for COVID-19 tests",
+      "datePublished": "2020-03-24",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SCBiz"
+      },
+      "about": {
+        "@id": "https://kevinsmurdock.com/#person"
+      }
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://kevinsmurdock.com/#news-wyff-2020-03-25",
+      "url": "https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255",
+      "headline": "Upstate commercial lab becomes first in SC to test for COVID-19",
+      "datePublished": "2020-03-25",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WYFF News 4"
+      },
+      "about": {
+        "@id": "https://kevinsmurdock.com/#person"
+      }
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://kevinsmurdock.com/#news-wistv-2020-04-16",
+      "url": "https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/",
+      "headline": "SC lab providing free COVID testing to all first responders",
+      "datePublished": "2020-04-16",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WIS-TV"
+      },
+      "about": {
+        "@id": "https://kevinsmurdock.com/#person"
+      }
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://kevinsmurdock.com/#news-citadel-2020-04-24",
+      "url": "https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/",
+      "headline": "Upstate commercial lab becomes first in SC to test for COVID-19",
+      "datePublished": "2020-04-24",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Citadel Today"
+      },
+      "about": {
+        "@id": "https://kevinsmurdock.com/#person"
+      }
+    },
+    {
+      "@type": "NewsArticle",
+      "@id": "https://kevinsmurdock.com/#news-governor-2022-02-23",
+      "url": "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
+      "headline": "Diversified Medical Healthcare expanding operations in Greenville County",
+      "datePublished": "2022-02-23",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Office of the Governor of South Carolina"
+      },
+      "about": {
+        "@id": "https://kevinsmurdock.com/#person"
       }
     },
     {
@@ -132,10 +238,26 @@
         },
         {
           "@type": "Question",
-          "name": "Where is Kevin S. Murdock based?",
+          "name": "What is Kevin Murdock known for in Greenville, SC?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "He is based in Greenville, South Carolina. Diversified Medical Healthcare's February 23, 2022 announcement listed its corporate headquarters at 6000 Pelham Road in Greenville."
+            "text": "Kevin S. Murdock is a healthcare entrepreneur in Greenville, South Carolina, and a member of The Citadel Class of 1992. He founded Premier Medical Laboratory Services, which in 2020 became the first private commercial testing facility in South Carolina granted FDA validation to run COVID-19 tests, according to The Citadel Today, WYFF News 4, and SCBiz. In February 2022, the South Carolina governor’s office published an announced expansion by Diversified Medical Healthcare, quoting him as CEO: a more than $51 million investment that would create 185 new jobs in Greenville County."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What did Premier Medical Laboratory Services do during COVID-19?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In March 2020, WYFF News 4 and SCBiz reported that Premier Medical Laboratory Services in Greenville County was granted FDA validation to run COVID-19 tests, making it the first private commercial testing facility in South Carolina to do so. The Citadel Today later published the same account and noted that Kevin Murdock, the founder, is a member of The Citadel Class of 1992. On April 16, 2020, WIS-TV reported that the Greenville-based laboratory offered free COVID-19 tests to first responders in the state, including law enforcement, firefighters, EMTs, and paramedics, who believed they may have been exposed but did not otherwise qualify."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is he based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He is based in Greenville, South Carolina. Diversified Medical Healthcare’s February 23, 2022 announcement listed its corporate headquarters at 6000 Pelham Road in Greenville."
           }
         },
         {
@@ -143,23 +265,23 @@
           "name": "What is Premier Medical Laboratory Services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Premier Medical Laboratory Services is a clinical laboratory in Greenville County founded by Kevin S. Murdock. In 2020, The Citadel Today and WYFF News 4 reported that it was the first private commercial testing facility in South Carolina granted FDA validation to run tests for COVID-19."
+            "text": "It is a clinical laboratory in Greenville County founded by Kevin S. Murdock. In 2020, The Citadel Today and WYFF News 4 reported that it was the first private commercial testing facility in South Carolina granted FDA validation to run tests for COVID-19."
           }
         },
         {
           "@type": "Question",
-          "name": "What did Diversified Medical Healthcare announce in February 2022?",
+          "name": "What was announced in February 2022?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On February 23, 2022, Diversified Medical Healthcare announced a $51 million investment and 185 new jobs in Greenville County. The South Carolina governor's office also published the announcement. The company said the expansion, including a planned 136,000-square-foot facility at 315 Tanner Price Way, was expected to be completed by 2025."
+            "text": "On February 23, 2022, Diversified Medical Healthcare announced a $51 million investment and 185 new jobs in Greenville County. The South Carolina governor’s office also published the announcement. The company said the expansion, including a planned 136,000-square-foot facility at 315 Tanner Price Way, was expected to be completed by 2025."
           }
         },
         {
           "@type": "Question",
-          "name": "How can members of the press or a business partner reach Kevin S. Murdock?",
+          "name": "How can members of the press or a business partner reach him?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Media and business inquiries can be sent through the contact form on kevinsmurdock.com."
+            "text": "Media and business inquiries can be sent through the contact form on this site."
           }
         }
       ]
@@ -597,10 +719,11 @@
     <div class="wrap">
       <p class="kicker">Media Coverage</p>
       <h2 id="press-title">Press Coverage</h2>
-      <p class="intro">Selected public coverage and company announcements, each with a source link. Headlines below follow what the cited article or announcement supports.</p>
+      <p class="intro">Selected public coverage and company announcements, each with a source link. Headlines and summaries below follow what the cited article or announcement supports.</p>
       <h3 class="year">2022</h3>
       <div class="press-grid">
-        <article class="press-card"><p class="outlet">PRNewswire &middot; SC Governor</p><h3><a href="https://www.prnewswire.com/news-releases/diversified-medical-healthcare-to-invest-51-million-add-185-new-professionals-to-its-south-carolina-operations-301488765.html" target="_blank" rel="noopener noreferrer">Diversified Medical Healthcare announced a $51 million investment and 185 new jobs</a></h3><p class="when"><time datetime="2022-02-23">February 23, 2022</time></p></article>
+        <article class="press-card"><p class="outlet">South Carolina Governor&rsquo;s Office</p><h3><a href="https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county" target="_blank" rel="noopener noreferrer">Diversified Medical Healthcare announced an expansion in Greenville County</a></h3><p class="summary">The official announcement described a more than $51 million investment that would create 185 new jobs. It named Premier Medical Laboratory Services, CPT Medical, Vessel Medical, and OnGen, and quoted CEO Kevin Murdock.</p><p class="when"><time datetime="2022-02-23">February 23, 2022</time></p></article>
+        <article class="press-card"><p class="outlet">PRNewswire</p><h3><a href="https://www.prnewswire.com/news-releases/diversified-medical-healthcare-to-invest-51-million-add-185-new-professionals-to-its-south-carolina-operations-301488765.html" target="_blank" rel="noopener noreferrer">Diversified Medical Healthcare announced a $51 million investment and 185 new jobs</a></h3><p class="when"><time datetime="2022-02-23">February 23, 2022</time></p></article>
         <article class="press-card"><p class="outlet">PRNewswire</p><h3><a href="https://www.prnewswire.com/news-releases/new-stealth-omicron-ba2-variant-identified-by-premier-medical-laboratory-services-301475888.html" target="_blank" rel="noopener noreferrer">Premier Medical Laboratory Services announced identification of the BA.2 Omicron variant</a></h3><p class="when"><time datetime="2022-02">February 2022</time></p></article>
         <article class="press-card"><p class="outlet">PRNewswire &middot; Miami Patch</p><h3><a href="https://www.prnewswire.com/news-releases/first-covid-19-ba4-variant-cases-in-the-state-of-florida-identified-301563244.html" target="_blank" rel="noopener noreferrer">The laboratory announced identification of BA.4 cases in Florida</a></h3><p class="when"><time datetime="2022-06">June 2022</time></p></article>
       </div>
@@ -611,13 +734,15 @@
       </div>
       <h3 class="year">2020</h3>
       <div class="press-grid">
-        <article class="press-card"><p class="outlet">The Citadel Today &middot; WYFF News 4</p><h3><a href="https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/" target="_blank" rel="noopener noreferrer">Citadel alum founded the first private commercial SC facility validated by the FDA to test for COVID-19</a></h3><p class="when"><time datetime="2020-04-24">April 24, 2020</time></p></article>
+        <article class="press-card"><p class="outlet">SCBiz</p><h3><a href="https://scbiz.com/greenville-lab-validated-for-covid-19-tests/" target="_blank" rel="noopener noreferrer">Greenville lab validated for COVID-19 tests</a></h3><p class="summary">Greenville-based Premier Medical Laboratory Services became the first commercial laboratory in the state validated to process COVID-19 testing, the company announced. The article quotes founder Kevin Murdock.</p><p class="when"><time datetime="2020-03-24">March 24, 2020</time></p></article>
+        <article class="press-card"><p class="outlet">WYFF News 4</p><h3><a href="https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255" target="_blank" rel="noopener noreferrer">Upstate commercial lab becomes first in SC to test for COVID-19</a></h3><p class="summary">Premier Medical Laboratory Services in Greenville County was granted validation by the Food and Drug Administration to run tests for COVID-19, making it the first private commercial testing facility in South Carolina to do so. Founder Kevin Murdock said he planned to hire local people laid off from restaurants and businesses.</p><p class="when"><time datetime="2020-03-25">March 25, 2020</time></p></article>
         <article class="press-card"><p class="outlet">PRNewswire</p><h3><a href="https://www.prnewswire.com/news-releases/south-carolina-laboratory-launching-effort-to-supply-free-covid-19-tests-to-first-responders-301035029.html" target="_blank" rel="noopener noreferrer">The laboratory announced free COVID-19 tests for first responders and FDA EUA validation</a></h3><p class="when"><time datetime="2020-04-03">April 3, 2020</time></p></article>
-        <article class="press-card"><p class="outlet">WIS-TV</p><h3><a href="https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/" target="_blank" rel="noopener noreferrer">WIS-TV reported free COVID-19 testing for South Carolina first responders</a></h3><p class="when"><time datetime="2020-04-16">April 16, 2020</time></p></article>
+        <article class="press-card"><p class="outlet">WIS-TV</p><h3><a href="https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/" target="_blank" rel="noopener noreferrer">WIS-TV reported free COVID-19 testing for South Carolina first responders</a></h3><p class="summary">A private lab based in Greenville offered free COVID-19 tests to first responders in the state, including law enforcement, firefighters, EMTs, and paramedics, who believed they may have been exposed but did not otherwise qualify. The report quotes Kevin Murdock, founder of Premier Medical Laboratory Services.</p><p class="when"><time datetime="2020-04-16">April 16, 2020</time></p></article>
+        <article class="press-card"><p class="outlet">The Citadel Today</p><h3><a href="https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/" target="_blank" rel="noopener noreferrer">Citadel alum founded the first private commercial SC facility validated by the FDA to test for COVID-19</a></h3><p class="summary">The Citadel Today notes that Kevin Murdock, the founder of Premier Medical Laboratory Services, is a member of The Citadel Class of 1992, and reports that the laboratory was granted FDA validation to run COVID-19 tests, making it the first private commercial testing facility in South Carolina to do so.</p><p class="when"><time datetime="2020-04-24">April 24, 2020</time></p></article>
         <article class="press-card"><p class="outlet">PRNewswire</p><h3><a href="https://www.prnewswire.com/news-releases/vessel-medical-donates-thousands-of-n95-masks-to-south-carolina-frontline-workers-during-covid-19-ppe-shortage-301053623.html" target="_blank" rel="noopener noreferrer">Vessel Medical announced donations of N95 masks to South Carolina frontline workers</a></h3><p class="when"><time datetime="2020-05">2020</time></p></article>
       </div>
       <ul class="outlets">
-        <li>The Citadel Today</li><li>WYFF News 4</li><li>PRNewswire</li><li>WIS-TV</li><li>The Post and Courier</li><li>SCBIO Foundation</li><li>SC Governor</li><li>Miami Patch</li>
+        <li>The Citadel Today</li><li>WYFF News 4</li><li>SCBiz</li><li>WIS-TV</li><li>PRNewswire</li><li>The Post and Courier</li><li>SCBIO Foundation</li><li>SC Governor</li><li>Miami Patch</li>
       </ul>
     </div>
   </section>
@@ -693,6 +818,10 @@
       <div class="stack">
         <h3>Who is Kevin S. Murdock?</h3>
         <p>Kevin S. Murdock is a Greenville, South Carolina healthcare entrepreneur and a member of The Citadel Class of 1992. He founded Premier Medical Laboratory Services, which The Citadel Today, citing WYFF News 4, reported in April 2020 as the first private commercial testing facility in South Carolina to receive FDA validation to test for COVID-19.</p>
+        <h3>What is Kevin Murdock known for in Greenville, SC?</h3>
+        <p>Kevin S. Murdock is a healthcare entrepreneur in Greenville, South Carolina, and a member of The Citadel Class of 1992. He founded Premier Medical Laboratory Services, which in 2020 became the first private commercial testing facility in South Carolina granted FDA validation to run COVID-19 tests, according to The Citadel Today, WYFF News 4, and SCBiz. In February 2022, the South Carolina governor&rsquo;s office published an announced expansion by Diversified Medical Healthcare, quoting him as CEO: a more than $51 million investment that would create 185 new jobs in Greenville County.</p>
+        <h3>What did Premier Medical Laboratory Services do during COVID-19?</h3>
+        <p>In March 2020, WYFF News 4 and SCBiz reported that Premier Medical Laboratory Services in Greenville County was granted FDA validation to run COVID-19 tests, making it the first private commercial testing facility in South Carolina to do so. The Citadel Today later published the same account and noted that Kevin Murdock, the founder, is a member of The Citadel Class of 1992. On April 16, 2020, WIS-TV reported that the Greenville-based laboratory offered free COVID-19 tests to first responders in the state, including law enforcement, firefighters, EMTs, and paramedics, who believed they may have been exposed but did not otherwise qualify.</p>
         <h3>Where is he based?</h3>
         <p>He is based in Greenville, South Carolina. Diversified Medical Healthcare&rsquo;s February 23, 2022 announcement listed its corporate headquarters at 6000 Pelham Road in Greenville.</p>
         <h3>What is Premier Medical Laboratory Services?</h3>
@@ -781,7 +910,7 @@
         <li><a href="https://firstinbook.com">First In (Book)</a></li>
       </ul>
     </nav>
-    <p class="updated">Updated November 9, 2026. Published by Kevin S. Murdock.</p>
+    <p class="updated">Updated November 10, 2026. Published by Kevin S. Murdock.</p>
     <p>&copy; Kevin S. Murdock. All rights reserved.</p>
   </div>
 </footer>

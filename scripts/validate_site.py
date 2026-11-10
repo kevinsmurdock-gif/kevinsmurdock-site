@@ -63,6 +63,13 @@ REQUIRED_SNIPPETS = [
     "https://firstinandpunished.com",
     "https://firstinbook.com",
     "id=\"video\"",
+    "Updated November 10, 2026",
+    "What is Kevin Murdock known for in Greenville, SC?",
+    "What did Premier Medical Laboratory Services do during COVID-19?",
+    "https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255",
+    "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
+    "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+    "announced an expansion in Greenville County",
 ]
 
 FORBIDDEN = [
@@ -84,6 +91,22 @@ DESCRIPTION = (
     "Kevin S. Murdock, Citadel Class of 1992, founded Premier Medical "
     "Laboratory Services, SC's first private commercial COVID-19 testing lab."
 )
+
+LLMS = ROOT / "llms.txt"
+
+SOURCE_URLS = [
+    "https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/",
+    "https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255",
+    "https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/",
+    "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
+    "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+]
+
+FAQ_REQUIRED = [
+    "Who is Kevin S. Murdock?",
+    "What is Kevin Murdock known for in Greenville, SC?",
+    "What did Premier Medical Laboratory Services do during COVID-19?",
+]
 
 
 def lin(channel: float) -> float:
@@ -288,8 +311,65 @@ def main() -> int:
         check("https://kevinsmurdock.com" not in same and "https://kevinsmurdock.com/" not in same, "canonical URL should not also be sameAs")
         check(all(not str(url).lower().endswith("rep-os.ai") for url in same), "RepOS URL in sameAs")
     if page:
-        check(page.get("dateModified") == "2026-11-09", "schema dateModified is not the real edit date")
+        check(page.get("dateModified") == "2026-11-10", "schema dateModified is not the real edit date")
         check(page.get("description") == DESCRIPTION, "ProfilePage description mismatch")
+
+    faq_page = next((node for node in graph if node.get("@type") == "FAQPage"), None)
+    check(faq_page is not None, "FAQPage node missing")
+    if person:
+        subject = person.get("subjectOf") or []
+        if not isinstance(subject, list):
+            subject = [subject]
+        subject_ids = {
+            item.get("@id") if isinstance(item, dict) else str(item)
+            for item in subject
+        }
+        articles = [node for node in graph if node.get("@type") == "NewsArticle"]
+        article_urls = {node.get("url") for node in articles}
+        article_ids = {node.get("@id") for node in articles}
+        for url in SOURCE_URLS:
+            check(url in article_urls, f"NewsArticle missing for {url}")
+        check(article_ids <= subject_ids, "Person subjectOf does not reference every NewsArticle")
+        check(len(articles) >= 5, "expected at least five NewsArticle nodes")
+    if faq_page:
+        faq_section = re.search(r'<section id="faq".*?</section>', html, flags=re.S)
+        check(faq_section is not None, "visible FAQ section missing")
+        visible: list[tuple[str, str]] = []
+        if faq_section:
+            pairs = re.findall(
+                r"<h3>(.*?)</h3>\s*<p>(.*?)</p>",
+                faq_section.group(0),
+                flags=re.S,
+            )
+            for question, answer in pairs:
+                q_text = re.sub(r"<[^>]+>", "", question)
+                a_text = re.sub(r"<[^>]+>", "", answer)
+                q_text = re.sub(r"\s+", " ", q_text).replace("&rsquo;", "’").replace("&amp;", "&").strip()
+                a_text = re.sub(r"\s+", " ", a_text).replace("&rsquo;", "’").replace("&amp;", "&").strip()
+                visible.append((q_text, a_text))
+        schema_qs = faq_page.get("mainEntity") or []
+        check(len(schema_qs) == len(visible), f"FAQPage has {len(schema_qs)} questions, page has {len(visible)}")
+        for required in FAQ_REQUIRED:
+            check(any(question == required for question, _answer in visible), f"visible FAQ missing {required}")
+        for schema_q, visible_pair in zip(schema_qs, visible):
+            name = schema_q.get("name", "")
+            answer = (schema_q.get("acceptedAnswer") or {}).get("text", "")
+            check(name == visible_pair[0], f"FAQ schema question mismatch: {name!r} != {visible_pair[0]!r}")
+            check(answer == visible_pair[1], f"FAQ schema answer mismatch for {name}")
+
+    check(LLMS.exists(), "llms.txt missing")
+    if LLMS.exists():
+        llms = LLMS.read_text(encoding="utf-8")
+        check("https://kevinsmurdock.com/" in llms, "llms.txt does not link the homepage")
+        check("https://kevinsmurdock.com/#press" in llms, "llms.txt does not link the press section")
+        check("https://kevinsmurdock.com/#faq" in llms, "llms.txt does not link the FAQ section")
+        for url in SOURCE_URLS:
+            check(url in llms, f"llms.txt missing source {url}")
+        check("The Citadel Class of 1992" in llms, "llms.txt missing Citadel Class of 1992")
+        check("first private commercial testing facility in South Carolina" in llms, "llms.txt missing FDA-validation fact")
+        check("announced expansion" in llms, "llms.txt should describe the 2022 investment as an announced expansion")
+        for bad in ("indictment", "consent judgment", "lawsuit"):
+            check(bad not in llms.lower(), f"llms.txt contains legal-matter wording: {bad}")
 
     css_vars = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", html))
     pairs = [
@@ -317,7 +397,7 @@ def main() -> int:
     check(ROBOTS.read_text(encoding="utf-8") == ROBOTS_EXPECTED, "robots.txt changed")
     sitemap = SITEMAP.read_text(encoding="utf-8")
     check("<loc>https://kevinsmurdock.com/</loc>" in sitemap, "sitemap loc missing")
-    check("<lastmod>2026-11-09</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
+    check("<lastmod>2026-11-10</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
     check("<changefreq>weekly</changefreq>" in sitemap, "sitemap changefreq changed")
     check("<priority>1.0</priority>" in sitemap, "sitemap priority changed")
     check(sitemap.count("<loc>") == 1, "sitemap should still list only the homepage")
