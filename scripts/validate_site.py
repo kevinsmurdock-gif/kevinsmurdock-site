@@ -70,6 +70,13 @@ REQUIRED_SNIPPETS = [
     "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
     "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
     "announced an expansion in Greenville County",
+    "https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html",
+    "https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/",
+    "https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979",
+    "https://scbiz.com/coping-with-covid-cpt-medical/",
+    "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
+    "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
+    "PRNewswire (company press release)",
 ]
 
 FORBIDDEN = [
@@ -100,6 +107,12 @@ SOURCE_URLS = [
     "https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/",
     "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
     "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+    "https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html",
+    "https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/",
+    "https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979",
+    "https://scbiz.com/coping-with-covid-cpt-medical/",
+    "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
+    "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
 ]
 
 FAQ_REQUIRED = [
@@ -330,7 +343,7 @@ def main() -> int:
         for url in SOURCE_URLS:
             check(url in article_urls, f"NewsArticle missing for {url}")
         check(article_ids <= subject_ids, "Person subjectOf does not reference every NewsArticle")
-        check(len(articles) >= 5, "expected at least five NewsArticle nodes")
+        check(len(articles) >= 11, "expected at least eleven NewsArticle nodes")
     if faq_page:
         faq_section = re.search(r'<section id="faq".*?</section>', html, flags=re.S)
         check(faq_section is not None, "visible FAQ section missing")
@@ -368,6 +381,7 @@ def main() -> int:
         check("The Citadel Class of 1992" in llms, "llms.txt missing Citadel Class of 1992")
         check("first private commercial testing facility in South Carolina" in llms, "llms.txt missing FDA-validation fact")
         check("announced expansion" in llms, "llms.txt should describe the 2022 investment as an announced expansion")
+        check("company press release" in llms.lower(), "llms.txt should label the March 24, 2020 PR Newswire item as a company press release")
         for bad in ("indictment", "consent judgment", "lawsuit"):
             check(bad not in llms.lower(), f"llms.txt contains legal-matter wording: {bad}")
 

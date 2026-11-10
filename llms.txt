@@ -33,3 +33,29 @@ This file summarizes https://kevinsmurdock.com/ for language models and answer e
 - SCBiz, March 24, 2020
   https://scbiz.com/greenville-lab-validated-for-covid-19-tests/
   Greenville-based Premier Medical Laboratory Services became the first commercial laboratory in the state validated to process COVID-19 testing, the company announced. The article quotes founder Kevin Murdock.
+
+- The Post and Courier, February 23, 2022
+  https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html
+  Greenville-based Diversified Medical Healthcare planned to expand into a new facility and launch another product line, an investment of $51 million that would create 185 new jobs. The article also states that Premier Medical Laboratory Services was the first lab in the state to be validated.
+
+- SCBiz, February 23, 2022
+  https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/
+  Greenville's Diversified Medical Healthcare announced plans to invest $51 million in growth, an expansion that would mean 185 new professional jobs for the Upstate. The article quotes CEO Kevin Murdock and Gov. Henry McMaster.
+
+- WYFF News 4, April 21, 2021
+  https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979
+  WYFF reported that Premier Medical Laboratory Services in Greenville County was among the largest laboratories in the country testing for COVID-19 variants. The station said the lab had added three genome sequencing machines to identify COVID-19 strains and was preparing to begin that testing.
+
+- SCBiz, March 23, 2020
+  https://scbiz.com/coping-with-covid-cpt-medical/
+  CPT Medical, in conjunction with Premier Medical Laboratory Services, expected to produce 54,000 COVID-19 test kits. The article quotes CPT Medical CEO and founder Connie Liesman on expanding domestic production.
+
+- SCBiz, July 31, 2020
+  https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/
+  Greenville companies CPT Medical and Hoowaki had begun working together on COVID-19 test kits. The article said CPT Medical had brought on 25 additional workers and aimed to produce about 200,000 test kits weekly once the operation was automated.
+
+## Company press releases
+
+- PR Newswire, March 24, 2020 (company press release)
+  https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html
+  Premier Medical Laboratory Services, headquartered in Greenville, announced it was validated for COVID-19 testing. The release described a then-current testing capacity of 1,000 tests per day, with plans to reach 28,000 per week, and quoted founder Kevin Murdock.
