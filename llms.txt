@@ -1,0 +1,82 @@
+# Kevin S. Murdock
+
+Kevin S. Murdock is a healthcare entrepreneur in Greenville, South Carolina, and a member of The Citadel Class of 1992. He founded Premier Medical Laboratory Services, which in 2020 became the first private commercial testing facility in South Carolina granted FDA validation to run COVID-19 tests.
+
+This file summarizes https://kevinsmurdock.com/ for language models and answer engines. It restates only facts already published on the site and in the sources below.
+
+## Site pages
+
+- https://kevinsmurdock.com/ — biography, press coverage, frequently asked questions, and contact
+- https://kevinsmurdock.com/#bio — biography and education
+- https://kevinsmurdock.com/#press — press coverage and in the news
+- https://kevinsmurdock.com/#faq — frequently asked questions
+- https://kevinsmurdock.com/#contact — media and business inquiries
+
+## Independent sources
+
+- The Citadel Today, April 24, 2020
+  https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/
+  Kevin Murdock, the founder of Premier Medical Laboratory Services, is a member of The Citadel Class of 1992. The article reports that the laboratory was granted FDA validation to run COVID-19 tests, making it the first private commercial testing facility in South Carolina to do so.
+
+- WYFF News 4, March 25, 2020
+  https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255
+  Premier Medical Laboratory Services in Greenville County was granted validation by the Food and Drug Administration to run tests for COVID-19, making it the first private commercial testing facility in South Carolina to do so. Founder Kevin Murdock said he planned to hire local people laid off from restaurants and businesses.
+
+- WIS-TV, April 16, 2020
+  https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/
+  A private lab based in Greenville offered free COVID-19 tests to first responders in the state, including law enforcement, firefighters, EMTs, and paramedics, who believed they may have been exposed but did not otherwise qualify. The report quotes Kevin Murdock, founder of Premier Medical Laboratory Services.
+
+- South Carolina governor's office, February 23, 2022
+  https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county
+  This is an announced expansion, not a completed project. The official announcement described a more than $51 million investment that would create 185 new jobs in Greenville County. It named Premier Medical Laboratory Services, CPT Medical, Vessel Medical, and OnGen, and quoted CEO Kevin Murdock.
+
+- SCBiz, March 24, 2020
+  https://scbiz.com/greenville-lab-validated-for-covid-19-tests/
+  Greenville-based Premier Medical Laboratory Services became the first commercial laboratory in the state validated to process COVID-19 testing, the company announced. The article quotes founder Kevin Murdock.
+
+- The Post and Courier, February 23, 2022
+  https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html
+  Greenville-based Diversified Medical Healthcare planned to expand into a new facility and launch another product line, an investment of $51 million that would create 185 new jobs. The article also states that Premier Medical Laboratory Services was the first lab in the state to be validated.
+
+- SCBiz, February 23, 2022
+  https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/
+  Greenville's Diversified Medical Healthcare announced plans to invest $51 million in growth, an expansion that would mean 185 new professional jobs for the Upstate. The article quotes CEO Kevin Murdock and Gov. Henry McMaster.
+
+- WYFF News 4, April 21, 2021
+  https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979
+  WYFF reported that Premier Medical Laboratory Services in Greenville County was among the largest laboratories in the country testing for COVID-19 variants. The station said the lab had added three genome sequencing machines to identify COVID-19 strains and was preparing to begin that testing.
+
+- SCBiz, March 23, 2020
+  https://scbiz.com/coping-with-covid-cpt-medical/
+  CPT Medical, in conjunction with Premier Medical Laboratory Services, expected to produce 54,000 COVID-19 test kits. The article quotes CPT Medical CEO and founder Connie Liesman on expanding domestic production.
+
+- SCBiz, July 31, 2020
+  https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/
+  Greenville companies CPT Medical and Hoowaki had begun working together on COVID-19 test kits. The article said CPT Medical had brought on 25 additional workers and aimed to produce about 200,000 test kits weekly once the operation was automated.
+
+
+- GenomeWeb, June 13, 2019
+  https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us
+  GenomeWeb reported that Patia had signed an exclusive deal with Premier Medical Laboratory Services to offer a type 2 diabetes risk assay in the United States, announcing Premier as the exclusive U.S. provider of the PATIA DiabetesPredict test at that time.
+
+- SCBiz, April 9, 2021
+  https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/
+  SCBiz reported that Sen. Tim Scott's senior staff visited the 40,000-square-foot Greenville facility that houses Premier Medical Laboratory Services, CPT Medical, OnGen, and Vessel Medical. The article quoted Senator Scott, from a news release, saying the companies had been a valuable partner for South Carolina.
+
+## Company press releases
+
+- PR Newswire, March 24, 2020 (company press release)
+  https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html
+  Premier Medical Laboratory Services, headquartered in Greenville, announced it was validated for COVID-19 testing. The release described a then-current testing capacity of 1,000 tests per day, with plans to reach 28,000 per week, and quoted founder Kevin Murdock.
+
+- PR Newswire, March 23, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html
+  The company reported more than one million COVID-19 tests processed, a laboratory staff of more than 360 employees, and that CPT Medical was capable of manufacturing 60,000 test kits per day.
+
+- PR Newswire, April 8, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html
+  Diversified Medical Healthcare announced that Sen. Tim Scott's senior staff visited the company's Greenville headquarters, which houses Premier Medical Laboratory Services, CPT Medical, OnGen, and Vessel Medical. The release also states that the visit came just two weeks after SC State Representatives Bobby Cox and Bruce Bannister visited the facility.
+
+- PR Newswire, June 17, 2021 (company press release)
+  https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html
+  The company said U.S. Sen. Lindsey Graham toured Premier Medical Laboratory Services in Greenville. The release states that Senator Graham spoke alongside Kevin Murdock, CEO of Premier Medical Laboratory Services, and includes a photograph of Murdock showing Graham around the laboratory.

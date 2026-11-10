@@ -63,6 +63,27 @@ REQUIRED_SNIPPETS = [
     "https://firstinandpunished.com",
     "https://firstinbook.com",
     "id=\"video\"",
+    "Updated November 10, 2026",
+    "What is Kevin Murdock known for in Greenville, SC?",
+    "What did Premier Medical Laboratory Services do during COVID-19?",
+    "https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255",
+    "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
+    "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+    "announced an expansion in Greenville County",
+    "https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html",
+    "https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/",
+    "https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979",
+    "https://scbiz.com/coping-with-covid-cpt-medical/",
+    "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
+    "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
+    "PRNewswire (company press release)",
+    "https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us",
+    "exclusive U.S. provider of the PATIA DiabetesPredict test",
+    "The company reported more than",
+    "https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html",
+    "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
+    "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
+    "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
 ]
 
 FORBIDDEN = [
@@ -84,6 +105,33 @@ DESCRIPTION = (
     "Kevin S. Murdock, Citadel Class of 1992, founded Premier Medical "
     "Laboratory Services, SC's first private commercial COVID-19 testing lab."
 )
+
+LLMS = ROOT / "llms.txt"
+
+SOURCE_URLS = [
+    "https://today.citadel.edu/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19/",
+    "https://www.wyff4.com/article/upstate-commercial-lab-becomes-first-in-sc-to-test-for-covid-19-testing/31917255",
+    "https://www.wistv.com/2020/04/16/sc-lab-providing-free-covid-testing-all-first-responders/",
+    "https://governor.sc.gov/news/2022-02/diversified-medical-healthcare-expanding-operations-greenville-county",
+    "https://scbiz.com/greenville-lab-validated-for-covid-19-tests/",
+    "https://www.postandcourier.com/greenville/business/greenville-medical-firm-adds-185-jobs-invests-51m-in-expansion/article_5feb28e8-93e0-11ec-9080-2bc7f038245e.html",
+    "https://scbiz.com/diversified-medical-healthcare-to-invest-51-million-add-185-jobs/",
+    "https://www.wyff4.com/article/greenville-county-lab-among-largest-in-country-testing-for-covid-19-variants-strains/36178979",
+    "https://scbiz.com/coping-with-covid-cpt-medical/",
+    "https://scbiz.com/greenville-companies-partner-to-patch-a-hole-in-covid-19-supply-chain/",
+    "https://www.prnewswire.com/news-releases/first-commercial-laboratory-in-south-carolina-validated-for-covid-19-testing-301028937.html",
+    "https://www.genomeweb.com/pcr/premier-medical-laboratory-services-exclusively-offer-patia-type-2-diabetes-risk-test-us",
+    "https://www.prnewswire.com/news-releases/one-year-since-fda-validation-of-south-carolinas-first-covid-19-testing-laboratory-301254210.html",
+    "https://www.prnewswire.com/news-releases/senator-tim-scotts-senior-staff-visits-scs-first-covid-19-testing-lab-at-one-year-mark-301265250.html",
+    "https://scbiz.com/greenville-lab-honored-for-nations-highest-covid-19-testing-capacity/",
+    "https://www.prnewswire.com/news-releases/us-senator-lindsey-graham-speaks-on-the-importance-of-variant-tracking-amid-increasing-spread-of-the-delta-variant-301315031.html",
+]
+
+FAQ_REQUIRED = [
+    "Who is Kevin S. Murdock?",
+    "What is Kevin Murdock known for in Greenville, SC?",
+    "What did Premier Medical Laboratory Services do during COVID-19?",
+]
 
 
 def lin(channel: float) -> float:
@@ -288,8 +336,66 @@ def main() -> int:
         check("https://kevinsmurdock.com" not in same and "https://kevinsmurdock.com/" not in same, "canonical URL should not also be sameAs")
         check(all(not str(url).lower().endswith("rep-os.ai") for url in same), "RepOS URL in sameAs")
     if page:
-        check(page.get("dateModified") == "2026-11-09", "schema dateModified is not the real edit date")
+        check(page.get("dateModified") == "2026-11-10", "schema dateModified is not the real edit date")
         check(page.get("description") == DESCRIPTION, "ProfilePage description mismatch")
+
+    faq_page = next((node for node in graph if node.get("@type") == "FAQPage"), None)
+    check(faq_page is not None, "FAQPage node missing")
+    if person:
+        subject = person.get("subjectOf") or []
+        if not isinstance(subject, list):
+            subject = [subject]
+        subject_ids = {
+            item.get("@id") if isinstance(item, dict) else str(item)
+            for item in subject
+        }
+        articles = [node for node in graph if node.get("@type") == "NewsArticle"]
+        article_urls = {node.get("url") for node in articles}
+        article_ids = {node.get("@id") for node in articles}
+        for url in SOURCE_URLS:
+            check(url in article_urls, f"NewsArticle missing for {url}")
+        check(article_ids <= subject_ids, "Person subjectOf does not reference every NewsArticle")
+        check(len(articles) >= 16, "expected at least sixteen NewsArticle nodes")
+    if faq_page:
+        faq_section = re.search(r'<section id="faq".*?</section>', html, flags=re.S)
+        check(faq_section is not None, "visible FAQ section missing")
+        visible: list[tuple[str, str]] = []
+        if faq_section:
+            pairs = re.findall(
+                r"<h3>(.*?)</h3>\s*<p>(.*?)</p>",
+                faq_section.group(0),
+                flags=re.S,
+            )
+            for question, answer in pairs:
+                q_text = re.sub(r"<[^>]+>", "", question)
+                a_text = re.sub(r"<[^>]+>", "", answer)
+                q_text = re.sub(r"\s+", " ", q_text).replace("&rsquo;", "’").replace("&amp;", "&").strip()
+                a_text = re.sub(r"\s+", " ", a_text).replace("&rsquo;", "’").replace("&amp;", "&").strip()
+                visible.append((q_text, a_text))
+        schema_qs = faq_page.get("mainEntity") or []
+        check(len(schema_qs) == len(visible), f"FAQPage has {len(schema_qs)} questions, page has {len(visible)}")
+        for required in FAQ_REQUIRED:
+            check(any(question == required for question, _answer in visible), f"visible FAQ missing {required}")
+        for schema_q, visible_pair in zip(schema_qs, visible):
+            name = schema_q.get("name", "")
+            answer = (schema_q.get("acceptedAnswer") or {}).get("text", "")
+            check(name == visible_pair[0], f"FAQ schema question mismatch: {name!r} != {visible_pair[0]!r}")
+            check(answer == visible_pair[1], f"FAQ schema answer mismatch for {name}")
+
+    check(LLMS.exists(), "llms.txt missing")
+    if LLMS.exists():
+        llms = LLMS.read_text(encoding="utf-8")
+        check("https://kevinsmurdock.com/" in llms, "llms.txt does not link the homepage")
+        check("https://kevinsmurdock.com/#press" in llms, "llms.txt does not link the press section")
+        check("https://kevinsmurdock.com/#faq" in llms, "llms.txt does not link the FAQ section")
+        for url in SOURCE_URLS:
+            check(url in llms, f"llms.txt missing source {url}")
+        check("The Citadel Class of 1992" in llms, "llms.txt missing Citadel Class of 1992")
+        check("first private commercial testing facility in South Carolina" in llms, "llms.txt missing FDA-validation fact")
+        check("announced expansion" in llms, "llms.txt should describe the 2022 investment as an announced expansion")
+        check("company press release" in llms.lower(), "llms.txt should label the March 24, 2020 PR Newswire item as a company press release")
+        for bad in ("indictment", "consent judgment", "lawsuit"):
+            check(bad not in llms.lower(), f"llms.txt contains legal-matter wording: {bad}")
 
     css_vars = dict(re.findall(r"(--[a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})", html))
     pairs = [
@@ -317,7 +423,7 @@ def main() -> int:
     check(ROBOTS.read_text(encoding="utf-8") == ROBOTS_EXPECTED, "robots.txt changed")
     sitemap = SITEMAP.read_text(encoding="utf-8")
     check("<loc>https://kevinsmurdock.com/</loc>" in sitemap, "sitemap loc missing")
-    check("<lastmod>2026-11-09</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
+    check("<lastmod>2026-11-10</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
     check("<changefreq>weekly</changefreq>" in sitemap, "sitemap changefreq changed")
     check("<priority>1.0</priority>" in sitemap, "sitemap priority changed")
     check(sitemap.count("<loc>") == 1, "sitemap should still list only the homepage")
