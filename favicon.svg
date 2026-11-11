@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Kevin S. Murdock">
-  <rect width="32" height="32" fill="#0F2A47"/>
-  <rect x="6" y="23" width="20" height="2" fill="#7FB2E5"/>
-  <text x="16" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#FFFFFF">KM</text>
+  <rect width="32" height="32" fill="#0d1b2a"/>
+  <rect x="6" y="23" width="20" height="2" fill="#e6c36a"/>
+  <text x="16" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#f6f1e8">KM</text>
 </svg>
