@@ -260,6 +260,73 @@ def meta(parser: Parser, *, name: str = "", prop: str = "") -> str:
     return ""
 
 
+SUBPAGES = [
+    ("about", "https://kevinsmurdock.com/about/"),
+    ("press", "https://kevinsmurdock.com/press/"),
+    ("faq", "https://kevinsmurdock.com/faq/"),
+]
+SITE_CSS = ROOT / "css" / "site.css"
+
+
+def check_subpages(check, home_html: str, home: "Parser") -> None:
+    """/about/, /press/ and /faq/ share main's gold-and-black stylesheet."""
+    style = re.search(r"<style>\n(.*?)</style>", home_html, flags=re.S)
+    home_css = "\n".join(
+        line[2:] if line.startswith("  ") else line for line in style.group(1).splitlines()
+    ).rstrip() if style else ""
+    check(SITE_CSS.exists(), "css/site.css missing")
+    if SITE_CSS.exists():
+        check(SITE_CSS.read_text(encoding="utf-8").startswith(home_css + "\n"),
+              "css/site.css must start with the homepage's inline CSS verbatim")
+    home_ids = set(home.ids)
+    for href in ("/about/", "/press/", "/faq/"):
+        check(href in home.hrefs, f"homepage nav missing {href}")
+    llms = LLMS.read_text(encoding="utf-8") if LLMS.exists() else ""
+    for name, url in SUBPAGES:
+        path = ROOT / name / "index.html"
+        check(path.exists(), f"/{name}/ missing")
+        if not path.exists():
+            continue
+        page_html = path.read_text(encoding="utf-8")
+        p = Parser()
+        p.feed(page_html)
+        label = f"/{name}/"
+        check(bool("".join(p.title_parts).strip()), f"{label} has no title")
+        check(p.h1_count == 1, f"{label} expected one visible h1, found {p.h1_count}")
+        check(p.has_main and p.has_header and p.has_footer and p.has_nav, f"{label} missing landmark")
+        check(p.skip, f"{label} skip link missing")
+        canonical = next((href for rel, href in p.links if rel == "canonical"), "")
+        check(canonical == url, f"{label} canonical {canonical}")
+        check(meta(p, prop="og:url") == url, f"{label} og:url mismatch")
+        check(meta(p, name="robots") == "index, follow", f"{label} robots meta is not index, follow")
+        check(("stylesheet", "/css/site.css") in p.links, f"{label} does not use /css/site.css")
+        check(len(p.scripts) == 1, f"{label} expected one JSON-LD script")
+        for _kind, body in p.scripts:
+            try:
+                json.loads(body)
+            except json.JSONDecodeError as exc:
+                check(False, f"{label} JSON-LD did not parse: {exc}")
+        ids = set(p.ids)
+        for href in p.hrefs:
+            if href.startswith("#") and href != "#":
+                check(href[1:] in ids, f"{label} broken in-page link {href}")
+            elif href.startswith("/") and not href.startswith("//"):
+                target, _, frag = href.partition("#")
+                target_file = ROOT / target.lstrip("/") / "index.html" if target.endswith("/") else ROOT / target.lstrip("/")
+                check(target_file.exists(), f"{label} links to missing page {href}")
+                if frag and target == "/":
+                    check(frag in home_ids, f"{label} links to missing homepage anchor {href}")
+        for want in ("/about/", "/press/", "/faq/"):
+            check(want in p.hrefs, f"{label} nav missing {want}")
+        previous = 0
+        for level, text in p.headings:
+            check(level <= previous + 1, f"{label} heading level skips to h{level}: {text}")
+            previous = level
+        for bad in FORBIDDEN:
+            check(bad not in page_html, f"{label} forbidden string present: {bad}")
+        check(url in llms, f"llms.txt does not list {url}")
+
+
 def main() -> int:
     failures: list[str] = []
 
@@ -434,7 +501,10 @@ def main() -> int:
     check("<lastmod>2026-11-10</lastmod>" in sitemap, "sitemap lastmod is not the real content-change date")
     check("<changefreq>weekly</changefreq>" in sitemap, "sitemap changefreq changed")
     check("<priority>1.0</priority>" in sitemap, "sitemap priority changed")
-    check(sitemap.count("<loc>") == 1, "sitemap should still list only the homepage")
+    locs = re.findall(r"<loc>(.*?)</loc>", sitemap)
+    check(sorted(locs) == sorted(["https://kevinsmurdock.com/"] + [url for _n, url in SUBPAGES]),
+          f"sitemap should list the homepage and the subpages exactly, found {locs}")
+    check_subpages(check, html, parser)
     check(OG.exists() and OG.read_bytes().startswith(b"\x89PNG"), "og-image.png missing or not a PNG")
     check(OG.stat().st_size < 400_000, "og image unexpectedly large")
     check((ROOT / "favicon.svg").exists(), "favicon missing")
