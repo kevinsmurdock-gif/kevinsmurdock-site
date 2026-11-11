@@ -7,6 +7,9 @@ This file summarizes https://kevinsmurdock.com/ for language models and answer e
 ## Site pages
 
 - https://kevinsmurdock.com/ — biography, press coverage, frequently asked questions, and contact
+- https://kevinsmurdock.com/about/ — biography, education, documented visits, and on-the-record statement
+- https://kevinsmurdock.com/press/ — press coverage and in the news
+- https://kevinsmurdock.com/faq/ — frequently asked questions
 - https://kevinsmurdock.com/#bio — biography and education
 - https://kevinsmurdock.com/#press — press coverage and in the news
 - https://kevinsmurdock.com/#faq — frequently asked questions
